@@ -12,7 +12,7 @@ class HospitalEmployee {
     }
 
     // get rmemining days getter
-    get _remainingVacationDays() {
+    get remainingVacationDays() {
         return this._remainingVacationDays
     }
 
@@ -22,3 +22,15 @@ class HospitalEmployee {
     }
 }
 
+// Subclass of HospitalEmployee
+class Nurse extends HospitalEmployee {
+    constructor(name, certifications) {
+        super(name);
+        this._certifications = certifications;
+    }
+}
+
+// Creating an instancer of Nurse class
+const nurseHeidi = new Nurse('Heidi', ['Cadiology', 'CPR'])
+
+console.log(nurseHeidi)
