@@ -20,6 +20,11 @@ class HospitalEmployee {
     takeVacationDays(daysoff) {
         this._remainingVacationDays -= daysoff
     }
+
+    // thatic method only accessible to Hospital Employee
+    static generatePassword() {
+        return Math.floor(Math.random() * 10000)
+    }
 }
 
 // Subclass of HospitalEmployee
@@ -46,3 +51,5 @@ const nurseHeidi = new Nurse('Heidi', ['Cadiology', 'CPR'])
 nurseHeidi.addCertification('Emergency')
 
 console.log(nurseHeidi)
+
+console.log(HospitalEmployee.generatePassword())
