@@ -28,9 +28,21 @@ class Nurse extends HospitalEmployee {
         super(name);
         this._certifications = certifications;
     }
+
+    // Get all certification
+    get certifications() {
+        return this._certifications
+    }
+
+    // method to add new certifications
+    addCertification(newCertificartion) {
+        this._certifications.push(newCertificartion)
+    }
 }
 
 // Creating an instancer of Nurse class
 const nurseHeidi = new Nurse('Heidi', ['Cadiology', 'CPR'])
+
+nurseHeidi.addCertification('Emergency')
 
 console.log(nurseHeidi)
