@@ -47,9 +47,21 @@ class School {
   }
 }
 
+// Primary School class which inherits from School classs
+class PrimarySchool extends School {
+  constructor(name, level, numberOfStudents, pickUpPolicy) {
+    super(name, level, numberOfStudents);
+    this._pickUpPolicy = pickUpPolicy;
+  }
+
+  get pickUpPolicy() {
+    return this._pickUpPolicy;
+  }
+}
+
 const testSchool = new School("PS 199", "Middle", 560);
 console.log(testSchool.numberOfStudents);
 testSchool.numberOfStudents = "Apple";
 testSchool.numberOfStudents = 589;
 console.log(testSchool.quickFacts());
-console.log(School.pickSubstituteTeacher())
+console.log(School.pickSubstituteTeacher());
