@@ -64,6 +64,25 @@ class Book extends Media {
   }
 }
 
-const bookOne = new Book("Robert P", "Something I learned", 45);
+// Movie ckass which inherits from the Media class
+class Movie extends Media {
+  constructor(director, title, runTime) {
+    super(title);
+    this._director = director;
+    this._runTime = runTime;
+  }
 
-console.log(bookOne.rating);
+  get director() {
+    return this._director;
+  }
+
+  get runTime() {
+    return this._runTime;
+  }
+}
+
+const bookOne = new Book("Robert P", "Something I learned", 45);
+const movieOne = new Movie("Robert P", "First Movie", 45);
+
+console.log(bookOne);
+console.log(movieOne);
