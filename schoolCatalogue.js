@@ -1,3 +1,6 @@
+// This is a School Catalogue excercise from Code Academy
+
+// Creation of School class
 class School {
   constructor(name, level, numberOfStudents) {
     this._name = name;
@@ -5,14 +8,17 @@ class School {
     this._numberOfStudents = numberOfStudents;
   }
 
+  //   name getter
   get name() {
     return this._name;
   }
 
+  //   level getter
   get level() {
     return this._level;
   }
 
+  //   number of students getter
   get numberOfStudents() {
     return this._numberOfStudents;
   }
