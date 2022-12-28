@@ -31,10 +31,25 @@ class School {
       console.log("Invalid input: numberOfStudents must be a number.");
     }
   }
+
+  //   Method returns information reguarding a school
+  quickFacts() {
+    console.log(
+      `${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`
+    );
+  }
+
+  //   static method returns random substitute teacher
+  static pickSubstituteTeacher() {
+    const teachers = ["Mike", "John", "Mary", "Christopher"];
+    const teacherNum = Math.floor(Math.random() * teachers.length);
+    return teachers[teacherNum];
+  }
 }
 
 const testSchool = new School("PS 199", "Middle", 560);
 console.log(testSchool.numberOfStudents);
 testSchool.numberOfStudents = "Apple";
 testSchool.numberOfStudents = 589;
-console.log(testSchool.numberOfStudents);
+console.log(testSchool.quickFacts());
+console.log(School.pickSubstituteTeacher())
