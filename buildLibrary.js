@@ -47,8 +47,23 @@ class Media {
   }
 }
 
-const newItem = new Media("Testing");
-newItem.addRating(5);
-newItem.addRating(7);
+// Book class which inherits from Media class
+class Book extends Media {
+  constructor(author, title, pages) {
+    super(title);
+    this._author = author;
+    this._pages = pages;
+  }
 
-console.log(newItem.getAverageRating());
+  get author() {
+    return this._author;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+}
+
+const bookOne = new Book("Robert P", "Something I learned", 45);
+
+console.log(bookOne.rating);
