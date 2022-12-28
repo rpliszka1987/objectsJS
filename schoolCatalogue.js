@@ -59,9 +59,22 @@ class PrimarySchool extends School {
   }
 }
 
-const testSchool = new School("PS 199", "Middle", 560);
-console.log(testSchool.numberOfStudents);
-testSchool.numberOfStudents = "Apple";
-testSchool.numberOfStudents = 589;
-console.log(testSchool.quickFacts());
-console.log(School.pickSubstituteTeacher());
+// Highschool class inherits from School
+class HighSchool extends School {
+  constructor(name, level, numberOfStudents, sportsTeams) {
+    super(name, level, numberOfStudents);
+    this._sportsTeams = sportsTeams;
+  }
+
+  get sportsTeams() {
+    return this._sportsTeams;
+  }
+}
+
+// Creating new high school
+const newHS = new HighSchool("Forest Hills High School", "High", 1400, [
+  "Basketball",
+  "Soccer",
+]);
+
+console.log(newHS);
