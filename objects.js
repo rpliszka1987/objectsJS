@@ -1,55 +1,55 @@
-// Crating a main class 
+// Crating a main class
 class HospitalEmployee {
-    // Creting obj constructor
-    constructor(name) {
-        this._name = name;
-        this._remainingVacationDays = 20;
-    }
+  // Creting obj constructor
+  constructor(name) {
+    this._name = name;
+    this._remainingVacationDays = 20;
+  }
 
-    // get name getter
-    get name() {
-        return this._name;
-    }
+  // get name getter
+  get name() {
+    return this._name;
+  }
 
-    // get rmemining days getter
-    get remainingVacationDays() {
-        return this._remainingVacationDays
-    }
+  // get rmemining days getter
+  get remainingVacationDays() {
+    return this._remainingVacationDays;
+  }
 
-    // objs method which subtracts days off from balance
-    takeVacationDays(daysoff) {
-        this._remainingVacationDays -= daysoff
-    }
+  // objs method which subtracts days off from balance
+  takeVacationDays(daysoff) {
+    this._remainingVacationDays -= daysoff;
+  }
 
-    // thatic method only accessible to Hospital Employee
-    static generatePassword() {
-        return Math.floor(Math.random() * 10000)
-    }
+  // thatic method only accessible to Hospital Employee
+  static generatePassword() {
+    return Math.floor(Math.random() * 10000);
+  }
 }
 
 // Subclass of HospitalEmployee
 class Nurse extends HospitalEmployee {
-    constructor(name, certifications) {
-        super(name);
-        this._certifications = certifications;
-    }
+  constructor(name, certifications) {
+    super(name);
+    this._certifications = certifications;
+  }
 
-    // Get all certification
-    get certifications() {
-        return this._certifications
-    }
+  // Get all certification
+  get certifications() {
+    return this._certifications;
+  }
 
-    // method to add new certifications
-    addCertification(newCertificartion) {
-        this._certifications.push(newCertificartion)
-    }
+  // method to add new certifications
+  addCertification(newCertificartion) {
+    this._certifications.push(newCertificartion);
+  }
 }
 
 // Creating an instancer of Nurse class
-const nurseHeidi = new Nurse('Heidi', ['Cadiology', 'CPR'])
+const nurseHeidi = new Nurse("Heidi", ["Cadiology", "CPR"]);
 
-nurseHeidi.addCertification('Emergency')
+nurseHeidi.addCertification("Emergency");
 
-console.log(nurseHeidi)
+console.log(nurseHeidi);
 
-console.log(HospitalEmployee.generatePassword())
+console.log(HospitalEmployee.generatePassword());
