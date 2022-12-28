@@ -22,7 +22,19 @@ class School {
   get numberOfStudents() {
     return this._numberOfStudents;
   }
+
+  //   setter to set number of students
+  set numberOfStudents(number) {
+    if (typeof number === "number") {
+      this._numberOfStudents = number;
+    } else {
+      console.log("Invalid input: numberOfStudents must be a number.");
+    }
+  }
 }
 
 const testSchool = new School("PS 199", "Middle", 560);
-console.log(testSchool);
+console.log(testSchool.numberOfStudents);
+testSchool.numberOfStudents = "Apple";
+testSchool.numberOfStudents = 589;
+console.log(testSchool.numberOfStudents);
